@@ -1,0 +1,44 @@
+<section class="space-y-5">
+  <div class="bg-white border border-slate-200 rounded-lg p-4 sm:p-6">
+    <h1 class="text-xl sm:text-2xl font-bold text-slate-900">À propos du projet</h1>
+    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+      L’application <strong>« Prières »</strong> a été réalisée dans le cadre du mini-projet Angular par
+      <strong>{{ author }}</strong>. Elle permet de consulter les horaires des cinq prières quotidiennes
+      (Fajr, Dhuhr, Asr, Maghrib, Isha), d’afficher la date grégorienne et hijri, de suivre la prochaine
+      prière en temps réel et de rechercher les horaires pour n’importe quelle ville.
+    </p>
+  </div>
+
+  <div class="bg-white border border-slate-200 rounded-lg p-4 sm:p-6">
+    <h2 class="text-base font-bold text-slate-900">API REST utilisée</h2>
+    <p class="text-sm text-slate-600 mt-1.5 leading-relaxed">
+      Les données sont récupérées en temps réel depuis l’API gratuite
+      <span class="font-semibold text-slate-800">AlAdhan Prayer Times API</span> :
+    </p>
+    <div class="mt-3 bg-slate-50 border border-slate-200 rounded px-3 py-2 text-xs sm:text-sm font-mono text-slate-700 overflow-x-auto">
+      https://api.aladhan.com/v1/timings
+    </div>
+
+    <h3 class="text-sm font-semibold text-slate-800 mt-5 mb-2">Méthodes de calcul</h3>
+    <ul class="space-y-2">
+      @for (method of methods; track method.name) {
+        <li class="text-sm border-l-2 border-teal-600 pl-3">
+          <p class="font-medium text-slate-800">{{ method.name }}</p>
+          <p class="text-xs text-slate-500">{{ method.detail }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+
+  <div class="bg-white border border-slate-200 rounded-lg p-4 sm:p-6">
+    <h2 class="text-base font-bold text-slate-900">Notions Angular mises en œuvre</h2>
+    <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700">
+      @for (notion of notions; track notion) {
+        <li class="flex items-start gap-2">
+          <span class="text-teal-700 font-bold">•</span>
+          <span>{{ notion }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
