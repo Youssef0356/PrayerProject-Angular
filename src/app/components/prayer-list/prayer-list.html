@@ -1,0 +1,54 @@
+<div class="bg-white border border-slate-200 rounded-lg divide-y divide-slate-100 overflow-hidden">
+  @for (prayer of prayers; track prayer.key) {
+    <div
+      class="flex items-center justify-between px-4 py-3.5 sm:px-5 transition-colors"
+      [class.bg-teal-50]="prayer.key === nextPrayerKey"
+      [class.border-l-4]="prayer.key === nextPrayerKey"
+      [class.border-teal-600]="prayer.key === nextPrayerKey"
+    >
+      <div>
+        <div class="flex items-center gap-2">
+          <span
+            class="font-semibold text-base"
+            [class.text-teal-800]="prayer.key === nextPrayerKey"
+            [class.text-slate-800]="prayer.key !== nextPrayerKey"
+          >
+            {{ prayer.label }}
+          </span>
+          @if (prayer.key === nextPrayerKey) {
+            <span class="text-xs font-medium text-teal-700 bg-teal-100 px-2 py-0.5 rounded">
+              Prochaine
+            </span>
+          }
+        </div>
+        <p class="text-xs text-slate-500 mt-0.5">
+          @switch (prayer.key) {
+            @case ('Fajr') {
+              Aube
+            }
+            @case ('Dhuhr') {
+              Midi
+            }
+            @case ('Asr') {
+              Après-midi
+            }
+            @case ('Maghrib') {
+              Coucher du soleil
+            }
+            @case ('Isha') {
+              Nuit
+            }
+          }
+        </p>
+      </div>
+
+      <span
+        class="text-base sm:text-lg font-semibold tabular-nums"
+        [class.text-teal-700]="prayer.key === nextPrayerKey"
+        [class.text-slate-900]="prayer.key !== nextPrayerKey"
+      >
+        {{ prayer.time }}
+      </span>
+    </div>
+  }
+</div>

@@ -1,0 +1,17 @@
+<div class="bg-white border border-slate-200 rounded-lg p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+  <div>
+    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+      Prochaine prière
+    </p>
+    <p class="text-xl font-bold text-teal-700 mt-1">
+      {{ prayerName }} <span class="text-slate-600 font-medium text-base">à {{ prayerTime }}</span>
+    </p>
+  </div>
+
+  <div class="sm:text-right">
+    <p class="text-xs font-medium text-slate-500">Temps restant</p>
+    <p class="text-xl sm:text-2xl font-bold tabular-nums text-slate-900 mt-0.5">
+      {{ countdown }}
+    </p>
+  </div>
+</div>
